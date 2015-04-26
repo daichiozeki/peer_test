@@ -1,0 +1,12 @@
+<script>
+	// create peerObject
+	var APIKEY = '2ea63305-7937-46fa-be18-90d33260c029'
+	var peer = new Peer({key: APIKEY});
+
+peer.on('open', function(id) {
+    var conn = peer.connect('anotherId');
+    conn.on('open', function() {
+        conn.send('hello world');
+    });
+});
+</script>
